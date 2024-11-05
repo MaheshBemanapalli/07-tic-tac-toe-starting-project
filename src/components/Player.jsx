@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function Player({ initialName, symbol, isActive }) {
+export default function Player({ initialName, symbol, isActive, onChnageName }) {
     // the value provided in useState is assigned to isEditing variable initially
     //we can change that value using setIsEditing function any time
     const [isEditing, setIsEditing] = useState(false);
@@ -12,6 +12,7 @@ export default function Player({ initialName, symbol, isActive }) {
         //this also does the same thing as above but not the best practice 
         // setIsEditing(!isEditing)
         console.log(isEditing)
+        onChnageName(symbol,playerName)
     }
     function handleEditChange(event){
         setPlayerName(event.target.value);
